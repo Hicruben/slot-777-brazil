@@ -1,0 +1,40 @@
+# Robots.txt for Slot 777 Brasil
+# https://slot777brasil.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://slot777brasil.com/sitemap.xml
+
+# Crawl-delay (optional, be respectful to servers)
+Crawl-delay: 1
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Allow all main pages
+Allow: /index.html
+Allow: /slots-777-jogos.html
+Allow: /como-cadastrar-slot-777.html
+Allow: /deposito-saque-pix.html
+Allow: /como-jogar-slot-777-iniciantes.html
+Allow: /bonus-promocoes.html
+Allow: /seguranca-licenca-slot-777.html
+Allow: /jogo-responsavel.html
+Allow: /aplicativo-mobile-slot-777.html
+Allow: /apostas-esportivas-brasil.html
+Allow: /perguntas-frequentes.html
+Allow: /contato-suporte.html
+Allow: /politica-privacidade.html
+Allow: /termos-uso.html
+
+# Allow assets
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Block error pages from indexing
+Disallow: /404.html
