@@ -467,6 +467,23 @@ em {
   flex-wrap: wrap;
 }
 
+/* Hero Small Variant - For legal/policy pages */
+.hero-section.hero-small {
+  min-height: 300px;
+  padding: var(--space-12) 0;
+}
+
+.hero-section.hero-small h1 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-4);
+}
+
+.hero-section.hero-small .hero-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+}
+
 /* ================================
    BUTTON COMPONENTS
    ================================ */
@@ -861,6 +878,63 @@ tr:hover td {
   color: var(--color-text-secondary);
   margin: 0 auto var(--space-4);
   max-width: 65ch;
+}
+
+/* ================================
+   LEGAL CONTENT - Privacy/Terms pages
+   ================================ */
+.legal-content {
+  max-width: var(--container-md);
+  margin: 0 auto;
+}
+
+.legal-content h2 {
+  font-size: var(--font-size-2xl);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+  color: var(--color-white);
+}
+
+.legal-content h2:first-child {
+  margin-top: 0;
+}
+
+.legal-content h3 {
+  font-size: var(--font-size-xl);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+  color: var(--color-primary);
+}
+
+.legal-content p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-4);
+  color: var(--color-text-secondary);
+}
+
+.legal-content ul {
+  margin-left: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.legal-content li {
+  margin-bottom: var(--space-2);
+  color: var(--color-text-secondary);
+}
+
+.legal-notice {
+  margin-top: var(--space-10);
+  padding: var(--space-6);
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-lg);
+}
+
+.legal-notice p {
+  margin-bottom: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
 }
 
 /* ================================
