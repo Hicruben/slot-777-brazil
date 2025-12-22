@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileNav = document.querySelector('.mobile-nav');
 
   if (mobileMenuButton && mobileNav) {
-    mobileMenuButton.addEventListener('click', function() {
+    // Toggle menu function
+    function toggleMobileMenu(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
       mobileNav.classList.toggle('active');
       const isOpen = mobileNav.classList.contains('active');
       mobileMenuButton.setAttribute('aria-expanded', isOpen);
@@ -23,6 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
           icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
         }
       }
+    }
+
+    // Handle both click and touch events
+    let touchHandled = false;
+
+    mobileMenuButton.addEventListener('touchend', function(e) {
+      touchHandled = true;
+      toggleMobileMenu(e);
+    }, { passive: false });
+
+    mobileMenuButton.addEventListener('click', function(e) {
+      // Only handle click if touch didn't already handle it
+      if (!touchHandled) {
+        toggleMobileMenu(e);
+      }
+      touchHandled = false;
     });
 
     // Close mobile menu when clicking outside
@@ -30,6 +50,11 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!mobileNav.contains(e.target) && !mobileMenuButton.contains(e.target)) {
         mobileNav.classList.remove('active');
         mobileMenuButton.setAttribute('aria-expanded', 'false');
+        // Reset icon
+        const icon = mobileMenuButton.querySelector('svg');
+        if (icon) {
+          icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+        }
       }
     });
   }

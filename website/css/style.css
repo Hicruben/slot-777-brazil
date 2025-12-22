@@ -366,6 +366,9 @@ em {
   cursor: pointer;
   padding: var(--space-2);
   color: var(--color-white);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .mobile-menu-button svg {
